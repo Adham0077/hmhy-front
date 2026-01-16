@@ -1,0 +1,37 @@
+import { useEffect } from "react"
+import { Navigate, Outlet } from "react-router-dom"
+import { SidebarProvider, SidebarTrigger } from "../components/ui/sidebar"
+import type { Role } from "../pages/auth/types"
+import { AppSidebar } from "./navbar";
+
+export const TeacherLayout = () => {
+  const token = localStorage.getItem('token')
+  const role = localStorage.getItem('role') as Role
+
+  useEffect(() => {
+    document.documentElement.classList.remove("telegram-dark")
+  }, [])
+
+  if (!token || role !== 'teacher') {
+    console.log('🔴 REDIRECTING TO /teacher/login')
+    return <Navigate replace to="/teacher/login" />
+  }
+
+  console.log('🟢 ACCESS GRANTED')
+  return (
+  <SidebarProvider>
+    <AppSidebar role="teacher" />
+
+    <main className="flex-1 min-w-0">
+      <div className="p-3 border-b">
+        <SidebarTrigger className="cursor-pointer border border-black p-2" />
+      </div>
+
+      <div className="px-6 py-6 bg-gray-100 min-h-screen">
+        <Outlet />
+      </div>
+    </main>
+  </SidebarProvider>
+)
+
+}
