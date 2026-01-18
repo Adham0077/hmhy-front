@@ -8,7 +8,7 @@ import { Button } from '../../components/ui/button'
 import { PasswordInput } from '../../components/ui/password-input'
 import { UseLogin } from './service/use-login'
 import { toast } from 'sonner'
-import { LogIn, ShieldCheck } from 'lucide-react' 
+import { LogIn, ShieldCheck } from 'lucide-react'
 
 const formSchema = z.object({
     username: z.string().min(2, "Username kamida 2 ta belgi bo'lishi kerak").max(50),
@@ -22,8 +22,8 @@ const Login = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            username: "bek",
-            password: "jamshid000!",
+            username: "admin2",
+            password: "Admin222!",
         },
     })
 
@@ -52,7 +52,7 @@ const Login = () => {
 
             <div className='w-full max-w-110 bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-8 relative z-10'>
                 <div className='flex flex-col items-center mb-8'>
-                    <div className='w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200 mb-4'>
+                    <div className='w-14 h-14 bg-slate-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200 mb-4'>
                         <ShieldCheck className='text-white w-8 h-8' />
                     </div>
                     <h1 className='text-2xl font-bold text-slate-900 tracking-tight'>Admin Panel</h1>
@@ -105,7 +105,7 @@ const Login = () => {
 
                         <Button
                             type="submit"
-                            className="w-full h-11 bg-cyan-700 hover:bg-cyan-900 text-white font-medium rounded-lg transition-all shadow-md active:scale-[0.98]"
+                            className="w-full h-11 bg-slate-700 hover:bg-slate-800 text-white font-medium rounded-lg transition-all shadow-md cursor-pointer"
                             disabled={isPending}
                         >
                             {isPending ? (

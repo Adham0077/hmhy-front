@@ -23,19 +23,17 @@ export function AppSidebar({ role }: { role: Role }) {
 
     return (
         <Sidebar className="border-r">
-            <SidebarHeader className="items-center h-20 p-3 bg-cyan-950">
+            <SidebarHeader className="items-center h-20 p-3 bg-cyan-900">
                 <Link to={role === 'teacher' ? '/teacher' : `/app/${role}`}>
                     <div className="flex items-center mt-4 font-medium">
-                        <h1 className="text-white text-4xl italic">HM</h1>
-                        <h1 className="text-emerald-400 text-4xl italic">H</h1>
-                        <h1 className="text-cyan-500 text-4xl italic">Y</h1>
+                        <h1 className="text-white text-4xl italic">HMHY</h1>
                     </div>
                 </Link>
 
             </SidebarHeader>
 
             <SidebarContent>
-                <SidebarGroupContent className="p-0 h-full bg-[#1E2939] text-white">
+                <SidebarGroupContent className="p-0 h-full bg-cyan-900 text-white">
                     <SidebarMenu>
                         {roleLinks.map((item) => (
                             <SidebarMenuItem key={item.title}>
@@ -52,10 +50,10 @@ export function AppSidebar({ role }: { role: Role }) {
                 </SidebarGroupContent>
             </SidebarContent>
 
-            <SidebarFooter className="p-4 bg-cyan-950 pt-8 pb-8">
+            <SidebarFooter className="p-4 bg-cyan-900 pt-8 pb-8">
                 <Button
                     variant="destructive"
-                    className="w-full flex items-center gap-2 justify-center"
+                    className="w-full flex items-center gap-2 justify-center cursor-pointer"
                     onClick={logout}
                 >
                     <LogOut className="w-4 h-4" />

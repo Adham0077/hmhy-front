@@ -37,7 +37,7 @@ export const Schedule = () => {
                 {!isCreating && (
                     <Button
                         onClick={() => setIsCreating(true)}
-                        className="bg-slate-900 hover:bg-slate-800 text-white gap-2"
+                        className="bg-sky-700 hover:bg-sky-800 text-white gap-2 cursor-pointer"
                     >
                         <Plus className="w-4 h-4" /> Dars yaratish
                     </Button>
@@ -76,7 +76,7 @@ export const Schedule = () => {
                     {isPending ? (
                         <LessonsSkeleton />
                     ) : lessons.length > 0 ? (
-                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className="grid gap-4 grid-cols-4">
                             {lessons.map((lesson: any) => (
                                 <LessonCard key={lesson.id} lesson={lesson} />
                             ))}

@@ -8,7 +8,7 @@ export const StatsCard = ({
     iconColor,
     labelColor,
 }: StatsCardProps) => (
-    <Card className="flex items-center justify-between p-6 bg-white border-none shadow-sm">
+    <Card className="flex items-start justify-between p-6 bg-white border-none shadow-sm">
         <div className="space-y-1">
             <p className={`text-xs font-semibold uppercase ${labelColor}`}>
                 {label}

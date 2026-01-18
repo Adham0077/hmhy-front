@@ -1,7 +1,7 @@
 import type { LoginResponse }  from "../pages/auth/types";
 import axios from "axios";
 
-export const BASE_URL = import.meta.env.VITE_API_URL || 'https://kristan-attentive-asher.ngrok-free.dev/api/v1';
+export const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:2026/api/v1';
 
 const request = axios.create({
   baseURL: BASE_URL,

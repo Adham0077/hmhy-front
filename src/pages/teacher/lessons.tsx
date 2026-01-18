@@ -32,7 +32,7 @@ export const TeacherLessons = () => {
         <div className="min-h-screen p-4 space-y-6 md:p-8">
             <div className="flex items-center justify-between">
                 <div>
-                    <h1 className="flex items-center gap-2 text-2xl font-bold text-slate-900">
+                    <h1 className="flex items-center gap-2 text-3xl font-bold text-slate-900">
                         <BookOpen className="w-6 h-6" /> Mening Darslarim
                     </h1>
                     <p className="text-sm text-slate-500">
@@ -59,20 +59,20 @@ export const TeacherLessons = () => {
                 </div>
             </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 grid-cols-3">
                 <StatsCard
                     label="Jami Darslar"
                     value={stats.totalLessons}
                     icon={BookOpen}
-                    labelColor="text-blue-600"
-                    iconColor="bg-blue-50 text-blue-600"
+                    labelColor="text-sky-700"
+                    iconColor="bg-sky-50 text-sky-700"
                 />
                 <StatsCard
                     label="Band Darslar"
                     value={stats.bookedLessons}
                     icon={CalendarDays}
-                    labelColor="text-green-600"
-                    iconColor="bg-green-50 text-green-600"
+                    labelColor="text-sky-700"
+                    iconColor="bg-sky-50 text-sky-700"
                 />
                 <StatsCard
                     label="Sahifa"
@@ -80,8 +80,8 @@ export const TeacherLessons = () => {
                         stats.totalPages || 0
                     }`}
                     icon={Layers}
-                    labelColor="text-purple-600"
-                    iconColor="bg-purple-50 text-purple-600"
+                    labelColor="text-sky-700"
+                    iconColor="bg-sky-50 text-sky-700"
                 />
             </div>
 

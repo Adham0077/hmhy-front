@@ -86,12 +86,12 @@ const TeacherCard = ({ teacher }: TeacherCardProps) => {
                         {teacher.fullName}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-1">
-                        <User className="w-4 h-4 flex-shrink-0" />
+                        <User className="w-4 h-4 shrink-0" />
                         <span>{teacher.level || 'Not specified'}</span>
                     </div>
                     {teacher.specification && (
                         <div className="flex items-center gap-2 text-sm text-gray-600">
-                            <Award className="w-4 h-4 flex-shrink-0" />
+                            <Award className="w-4 h-4 shrink-0" />
                             <span>{getSpecificationLabel(teacher.specification)}</span>
                         </div>
                     )}
@@ -133,7 +133,7 @@ const TeacherCard = ({ teacher }: TeacherCardProps) => {
             {/* View Lessons Button */}
             <button
                 onClick={handleViewLessons}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-all text-blue-700 font-medium"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-200 hover:bg-slate-300 border border-slate-200 rounded-lg transition-all text-slate-700 font-medium cursor-pointer"
             >
                 View Lessons
                 <ChevronRight className="w-4 h-4" />

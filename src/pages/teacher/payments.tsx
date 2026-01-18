@@ -1,5 +1,5 @@
 import { useTeacherStats } from "./service/query/useTeacherStats";
-import { CheckCircle2, TrendingUp, XCircle, Wallet } from "lucide-react";
+import { Wallet } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { PaymentsSkeleton } from "./components/payments-skeleton";
@@ -13,7 +13,6 @@ export const Payments = () => {
             title: "To'langan",
             amount: stats?.paid?.amount || 0,
             count: stats?.paid?.count || 0,
-            icon: <CheckCircle2 className="text-emerald-500 w-4 h-4" />,
             color: "text-emerald-500",
             countLabel: "ta to'lov",
         },
@@ -21,7 +20,6 @@ export const Payments = () => {
             title: "To'lanmagan",
             amount: stats?.unpaid?.amount || 0,
             count: stats?.unpaid?.count || 0,
-            icon: <TrendingUp className="text-orange-500 w-4 h-4" />,
             color: "text-orange-500",
             countLabel: "ta dars",
         },
@@ -29,7 +27,6 @@ export const Payments = () => {
             title: "Bekor qilingan",
             amount: stats?.cancelled?.amount || 0,
             count: stats?.cancelled?.count || 0,
-            icon: <XCircle className="text-red-500 w-4 h-4" />,
             color: "text-red-500",
             countLabel: "ta",
         },
@@ -40,7 +37,7 @@ export const Payments = () => {
     return (
         <div className="p-4 md:p-8 space-y-8 min-h-screen">
             <div className="space-y-1">
-                <h1 className="text-2xl font-bold text-slate-900">
+                <h1 className="text-3xl font-bold text-slate-900">
                     To'lovlarim
                 </h1>
                 <p className="text-sm text-slate-500 font-medium">
@@ -60,7 +57,6 @@ export const Payments = () => {
                                     {card.title}
                                 </span>
                             </div>
-                            {card.icon}
                         </div>
 
                         <div className="space-y-1">

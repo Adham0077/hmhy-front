@@ -10,71 +10,79 @@ export default function RoleSelect() {
       desc: "Tizimni boshqarish va nazorat",
       icon: <Shield className="w-6 h-6" />,
       path: "/admin/login",
-      color: "from-slate-800 to-slate-900",
-      hover: "hover:shadow-cyan-800"
+      gradient: "from-slate-600 via-gray-500 to-slate-400",
+      glow: "group-hover:shadow-slate-600/50"
     },
     {
-      title: "O'qituvchi",
+      title: "Teacher",
       desc: "Darslar va guruhlarni boshqarish",
       icon: <GraduationCap className="w-6 h-6" />,
       path: "/teacher/login",
-      color: "from-blue-600 to-indigo-600",
-      hover: "hover:shadow-blue-800"
+      gradient: "from-sky-600 via-blue-500 to-sky-400",
+      glow: "group-hover:shadow-sky-600/50"
     },
     {
-      title: "Talaba",
+      title: "Student",
       desc: "Telegram bot orqali ro'yxatdan o'tish",
       icon: <Users className="w-6 h-6" />,
       path: "/telegram",
-      color: "from-emerald-500 to-teal-600",
-      hover: "hover:shadow-emerald-800"
+      gradient: "from-emerald-600 via-green-500 to-emerald-400",
+      glow: "group-hover:shadow-emerald-600/50"
     }
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-300 p-4 font-sans relative overflow-hidden">
-      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100 rounded-full blur-3xl opacity-50" />
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-900 via-slate-800 to-slate-900 p-4 font-sans relative overflow-hidden">
+      {/* Animated background orbs */}
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-slate-600/20 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-600/20 rounded-full blur-3xl animate-pulse delay-700" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-120 h-120 bg-sky-600/20 rounded-full blur-3xl" />
 
       <div className="z-10 w-full max-w-md">
-        <div className="text-center mb-10">
-          <h1 className="text-sm font-bold uppercase tracking-[0.2em] text-blue-600 mb-2">
+        <div className="text-center mb-12">
+          <div className="inline-block mb-4">
+            <h1 className="text-6xl font-black text-white mb-2">HMHY</h1>
+          </div>
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-white mb-3">
             Xush Kelibsiz
-          </h1>
-          <h2 className="text-3xl font-black text-slate-800">
+          </p>
+          <h2 className="text-4xl font-black text-white mb-2 tracking-tight">
             CRM tizimiga kirish
           </h2>
-          <p className="text-slate-500 mt-2">Davom etish uchun rolingizni tanlang</p>
+          <p className="text-slate-400 text-sm">Davom etish uchun rolingizni tanlang</p>
         </div>
 
-        <div className="grid gap-4">
+        <div className="space-y-4">
           {roles.map((role) => (
             <button
               key={role.path}
               onClick={() => navigate(role.path)}
-              className={`group relative flex items-center p-4 bg-white border border-slate-100 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:border-transparent shadow-sm hover:shadow-xl ${role.hover}`}
+              className={`group relative w-full flex items-center p-5 bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl transition-all duration-500 hover:scale-[1.03] hover:border-slate-600 shadow-lg hover:shadow-2xl ${role.glow} overflow-hidden`}
             >
-              <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${role.color} flex items-center justify-center text-white shadow-lg`}>
+              {/* Gradient overlay on hover */}
+              <div className={`absolute inset-0 bg-linear-to-r ${role.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+              
+              <div className={`relative shrink-0 w-14 h-14 rounded-xl bg-linear-to-br ${role.gradient} flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500`}>
                 {role.icon}
               </div>
               
-              <div className="ml-4 text-left flex-grow">
-                <h3 className="text-lg font-bold text-slate-800 group-hover:text-blue-600 transition-colors">
+              <div className="relative ml-5 text-left grow">
+                <h3 className="text-lg font-bold text-white group-hover:text-white group-hover:bg-clip-text transition-all duration-300">
                   {role.title}
                 </h3>
-                <p className="text-xs text-slate-500 font-medium">
+                <p className="text-sm text-slate-400 font-medium mt-0.5">
                   {role.desc}
                 </p>
               </div>
 
-              <div className="opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-slate-400">
+              <div className="relative opacity-0 group-hover:opacity-100 transform translate-x-4 group-hover:translate-x-0 transition-all duration-500 text-slate-400 group-hover:text-white">
                 <ArrowRight className="w-5 h-5" />
               </div>
             </button>
           ))}
         </div>
 
-        <p className="text-center mt-10 text-slate-400 text-xs font-medium">
+        <p className="text-center mt-12 text-slate-500 text-xs font-medium">
           © 2026 HMHY Platform. Barcha huquqlar himoyalangan.
         </p>
       </div>

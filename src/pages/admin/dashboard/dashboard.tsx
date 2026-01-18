@@ -26,8 +26,8 @@ export const Dashboard = () => {
       <div className='flex items-center justify-center h-[80vh]'>
         <div className='flex flex-col items-center gap-4'>
           <div className='relative'>
-            <Loader2 className='w-12 h-12 animate-spin text-blue-600' />
-            <LayoutDashboard className='w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-blue-400' />
+            <Loader2 className='w-12 h-12 animate-spin text-slate-600' />
+            <LayoutDashboard className='w-6 h-6 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-slate-400' />
           </div>
           <p className='text-slate-500 font-bold animate-pulse uppercase tracking-widest text-xs'>Platforma yuklanmoqda...</p>
         </div>
@@ -56,76 +56,61 @@ export const Dashboard = () => {
     {
       title: 'Jami Ustozlar',
       value: stats.totalTeachers,
-      trend: '+2 yangi',
       icon: Users,
-      color: 'blue',
+      color: 'sky',
     },
     {
       title: 'Jami Talabalar',
       value: stats.totalStudents,
-      trend: '+15 yangi',
       icon: GraduationCap,
       color: 'emerald',
     },
     {
       title: 'Faol Darslar',
       value: stats.totalLessons,
-      trend: 'Ayni vaqtda',
       icon: BookOpen,
       color: 'purple',
     },
     {
       title: 'Umumiy Tushum',
       value: stats.totalRevenue.toLocaleString('uz-UZ'),
-      trend: 'Uzs',
       icon: DollarSign,
       color: 'orange',
     }
   ]
 
   return (
-    <div className='space-y-4 bg-[#f8faff] min-h-screen'>
+    <div className='space-y-4 bg-slate-200 min-h-screen'>
       
-      <div className='relative overflow-hidden rounded-3xl bg-cyan-800 p-8 text-white shadow-2xl'>
+      <div className='relative overflow-hidden rounded-3xl bg-slate-800 p-8 text-white shadow-2xl'>
         <div className='relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6'>
           <div>
             <div className='flex items-center gap-2 mb-2'>
-                <Badge className='bg-blue-500/20 text-blue-300 border-none hover:bg-blue-500/30'>
-                    Admin Panel v2.0
+                <Badge className='bg-slate-500/20 text-slate-300 border-none hover:bg-slate-500/30'>
+                    Admin Panel
                 </Badge>
-                <span className='text-slate-400 text-xs font-bold'>• 2026 Season</span>
             </div>
             <h1 className='text-4xl font-black tracking-tight'>
-              Xush kelibsiz, <span className='text-blue-400'>{username}</span>! 👋
+              Xush kelibsiz, <span className='text-slate-400'>{username}</span> !
             </h1>
             <p className='text-slate-400 mt-2 font-medium max-w-max'>
               Bugun platformangizda o'sish kuzatilmoqda. Barcha ko'rsatkichlar joyida.
             </p>
           </div>
-          <div className='flex gap-4'>
-            <Card className='bg-white/5 border-white/10 backdrop-blur-md text-white p-4 min-w-32'>
-                <p className='text-[10px] font-bold uppercase text-slate-400'>Status</p>
-                <p className='text-emerald-400 font-black flex items-center gap-2'>
-                    <div className='w-2 h-2 bg-emerald-400 rounded-full animate-ping' /> Live
-                </p>
-            </Card>
-          </div>
         </div>
-        <div className='absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl' />
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
         {statsCards.map((stat) => ( 
-          <Card key={stat.title} className='bg-gray-200 border-none shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden'>
+          <Card key={stat.title} className='bg-white border-none shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden'>
             <CardContent className='p-6'>
               <div className='flex justify-between items-start mb-4'>
                 <div className={`p-3 rounded-2xl bg-${stat.color}-50 text-${stat.color}-600 group-hover:scale-110 transition-transform duration-300`}>
                   <stat.icon className='w-6 h-6' />
                 </div>
-                <Badge variant="outline" className='text-[10px] font-bold border-slate-100'>{stat.trend}</Badge>
               </div>
               <div>
-                <h3 className='text-slate-500 text-xs font-black uppercase tracking-wider'>{stat.title}</h3>
+                <h3 className='text-slate-600 text-xs font-black uppercase tracking-wider'>{stat.title}</h3>
                 <p className='text-3xl font-black text-slate-900 mt-1'>{stat.value}</p>
               </div>
             </CardContent>
@@ -133,7 +118,7 @@ export const Dashboard = () => {
         ))}
       </div>
 
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+      <div className='grid grid-cols-3 gap-8'>
         <Card className='border-none shadow-sm'>
           <CardHeader>
             <div className='flex items-center gap-3'>
@@ -165,7 +150,7 @@ export const Dashboard = () => {
         <Card className='border-none shadow-sm'>
           <CardHeader>
             <div className='flex items-center gap-3'>
-                <div className='p-2 bg-blue-50 rounded-lg'><Users className='w-5 h-5 text-blue-600' /></div>
+                <div className='p-2 bg-sky-50 rounded-lg'><Users className='w-5 h-5 text-sky-600' /></div>
                 <div>
                     <CardTitle className='text-lg font-black'>Ustozlar</CardTitle>
                     <CardDescription className='text-xs font-bold'>Reyting ko'rsatkichlari</CardDescription>
@@ -173,12 +158,12 @@ export const Dashboard = () => {
             </div>
           </CardHeader>
           <CardContent className='space-y-4'>
-            <div className='p-4 rounded-2xl bg-blue-50/50 border border-blue-100 flex items-center justify-between'>
+            <div className='p-4 rounded-2xl bg-sky-50/50 border border-sky-100 flex items-center justify-between'>
                 <div className='flex items-center gap-3'>
-                    <TrendingUp className='w-5 h-5 text-blue-600' />
+                    <TrendingUp className='w-5 h-5 text-sky-700' />
                     <span className='font-bold text-slate-700'>Jami mutaxassislar</span>
                 </div>
-                <span className='text-2xl font-black text-blue-700'>{stats.totalTeachers}</span>
+                <span className='text-2xl font-black text-sky-700'>{stats.totalTeachers}</span>
             </div>
             <div className='p-4 rounded-2xl bg-amber-50/50 border border-amber-100 flex items-center justify-between'>
                 <div className='flex items-center gap-3'>
@@ -201,9 +186,9 @@ export const Dashboard = () => {
             </div>
           </CardHeader>
           <CardContent className='space-y-4'>
-            <div className='p-4 rounded-2xl bg-cyan-950 text-white flex items-center justify-between'>
+            <div className='p-4 rounded-2xl bg-slate-800 text-white flex items-center justify-between'>
                 <div className='flex items-center gap-3'>
-                    <DollarSign className='w-5 h-5 text-blue-400' />
+                    <DollarSign className='w-5 h-5 text-orange-400' />
                     <span className='font-bold'>Sof foyda</span>
                 </div>
                 <span className='text-xl font-black'>{(stats.totalRevenue / 1000).toFixed(1)}K <small className='text-[10px] text-slate-400 uppercase'>uzs</small></span>
@@ -224,9 +209,9 @@ export const Dashboard = () => {
             <CardDescription className='font-medium italic'>Bo'limlarga tezkor o'tish tugmalari</CardDescription>
         </CardHeader>
         <CardContent className='p-2'>
-            <div className='grid grid-cols-2 md:grid-cols-4 gap-4'>
+            <div className='grid grid-cols-4 gap-4'>
                 {[
-                    { title: 'Ustozlar', icon: Users, color: 'blue', link: '/app/admin/teacher' },
+                    { title: 'Ustozlar', icon: Users, color: 'sky', link: '/app/admin/teacher' },
                     { title: 'Talabalar', icon: GraduationCap, color: 'emerald', link: '/app/admin/student' },
                     { title: 'Darslar', icon: BookOpen, color: 'purple', link: '/app/admin/lesson' },
                     { title: "To'lovlar", icon: DollarSign, color: 'orange', link: '/app/admin/payment' }
@@ -234,7 +219,7 @@ export const Dashboard = () => {
                     <Link
                         key={item.title}
                         to={item.link}
-                        className='group relative flex flex-col items-center p-6 rounded-2xl bg-gray-200 border border-slate-100 hover:bg-cyan-700 transition-all duration-300 hover:shadow-xl overflow-hidden'
+                        className='group relative flex flex-col items-center p-6 rounded-2xl bg-gray-200 border border-slate-100 hover:bg-slate-800 transition-all duration-300 hover:shadow-xl overflow-hidden'
                     >
                         <div className={`p-4 rounded-xl bg-${item.color}-50 text-${item.color}-600 group-hover:bg-white/10 group-hover:text-white transition-colors mb-3`}>
                             <item.icon className='w-6 h-6' />
@@ -242,7 +227,7 @@ export const Dashboard = () => {
                         <p className='text-sm font-black text-slate-700 group-hover:text-white transition-colors'>
                             {item.title}
                         </p>
-                        <div className='absolute bottom-0 left-0 w-full h-1 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform' />
+                        <div className='absolute bottom-0 left-0 w-full h-1 bg-cyan-700 scale-x-0 group-hover:scale-x-100 transition-transform' />
                     </Link>
                 ))}
             </div>

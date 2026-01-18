@@ -150,7 +150,7 @@ export const TeacherProfile = () => {
         <div className="min-h-screen p-4 md:p-8">
             <div className="mx-auto max-w-8xl space-y-6">
                 <div className="flex items-center justify-between">
-                    <h1 className="text-3xl font-bold text-gray-900">
+                    <h1 className="text-3xl font-bold text-slate-900">
                         My Profile
                     </h1>
                     {!isEditing && !isChangingPassword && (
@@ -175,7 +175,7 @@ export const TeacherProfile = () => {
                 </div>
 
                 <Card className="overflow-hidden border-none shadow-sm bg-white">
-                    <div className="h-24 w-full bg-linear-to-r from-slate-100 to-slate-200" />
+                    <div className="h-24 w-full bg-linear-to-r from-sky-100 to-sky-200" />
                     <div className="px-8 py-6">
                         <div className="relative flex flex-col items-center sm:flex-row sm:items-center sm:gap-10">
                             <div className="flex flex-col items-center">
@@ -183,7 +183,7 @@ export const TeacherProfile = () => {
                                     <AvatarImage
                                         src={avatarPreview || profile?.imageUrl}
                                     />
-                                    <AvatarFallback className="bg-slate-200">
+                                    <AvatarFallback className="bg-sky-200">
                                         {profile?.fullName?.charAt(0)}
                                     </AvatarFallback>
                                 </Avatar>

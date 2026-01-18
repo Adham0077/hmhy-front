@@ -20,7 +20,7 @@ export const LessonCard = ({ lesson }: { lesson: any }) => {
                     >
                         {lesson.status}
                     </Badge>
-                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors">
                         {lesson.name}
                     </h3>
                 </div>
@@ -65,7 +65,7 @@ export const LessonCard = ({ lesson }: { lesson: any }) => {
 
             <Button
                 variant="outline"
-                className="w-full border-slate-200 text-slate-700 hover:bg-slate-50"
+                className="w-full border-slate-200 text-slate-700 hover:bg-sky-100"
                 asChild
             >
                 <a href={lesson.googleMeetUrl} target="_blank" rel="noreferrer">

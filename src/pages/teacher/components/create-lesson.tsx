@@ -179,14 +179,14 @@ export const CreateLessonForm = ({
                         variant="ghost"
                         onClick={onCancel}
                         disabled={isPending}
-                        className="h-11 px-6 text-slate-500 hover:text-slate-800 hover:bg-slate-100 transition-colors rounded-xl font-medium"
+                        className="h-11 px-6 text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-colors rounded-xl font-medium"
                     >
                         Cancel
                     </Button>
                     <Button
                         onClick={handleSubmit}
                         disabled={isPending}
-                        className="bg-black text-white px-12 hover:bg-slate-800"
+                        className="bg-sky-700 text-white px-12 hover:bg-sky-800"
                     >
                         {isPending ? "Creating..." : "Create Lesson"}
                     </Button>

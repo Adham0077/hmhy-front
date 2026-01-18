@@ -386,7 +386,7 @@ export const ProfilePage = () => {
                                 </label>
                             </div>
                             <div>
-                                <span className="inline-flex items-center px-4 py-1.5 bg-red-50 text-red-700 text-sm font-bold rounded border border-red-200">
+                                <span className="inline-flex items-center px-4 py-1.5 bg-slate-200 text-slate-800 text-sm font-bold rounded border border-slate-400">
                                     {profile?.role?.toUpperCase() || "ADMIN"}
                                 </span>
                             </div>
