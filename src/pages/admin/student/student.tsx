@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { 
-  Search, 
-  ArrowUpDown, 
-  Eye, 
-  Edit, 
-  Ban, 
-  Trash2, 
-  UserCheck, 
-  Users, 
+import {
+  Search,
+  ArrowUpDown,
+  Eye,
+  Edit,
+  Ban,
+  Trash2,
+  UserCheck,
+  Users,
   UserMinus,
   MessageSquare
 } from "lucide-react";
@@ -33,17 +33,17 @@ import {
 export default function StudentPage() {
   const { data: studentsData, isLoading } = useStudentList();
   const { data: statsData } = useStudentStats();
-  
+
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedStudent, setSelectedStudent] = useState<string | null>(null);
   const [modalType, setModalType] = useState<"detail" | "edit" | "block" | "delete" | null>(null);
 
   const students: Student[] = Array.isArray(studentsData?.data) ? studentsData.data : [];
-const stats = statsData ?? {
-  totalStudents: 0,
-  activeStudents: 0,
-  blockedStudents: 0,
-};
+  const stats = statsData ?? {
+    totalStudents: 0,
+    activeStudents: 0,
+    blockedStudents: 0,
+  };
 
   const filteredStudents = students.filter(
     (student) =>
@@ -87,24 +87,24 @@ const stats = statsData ?? {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <StatsCard 
-          title="Total Students" 
-          value={stats.totalStudents} 
-          icon={<Users className="w-5 h-5 text-blue-600" />} 
+        <StatsCard
+          title="Total Students"
+          value={stats.totalStudents}
+          icon={<Users className="w-5 h-5 text-blue-600" />}
           description="All registered students"
           color="blue"
         />
-        <StatsCard 
-          title="Active Students" 
-          value={stats.activeStudents} 
-          icon={<UserCheck className="w-5 h-5 text-emerald-600" />} 
+        <StatsCard
+          title="Active Students"
+          value={stats.activeStudents}
+          icon={<UserCheck className="w-5 h-5 text-emerald-600" />}
           description="Access permitted"
           color="emerald"
         />
-        <StatsCard 
-          title="Blocked Students" 
-          value={stats.blockedStudents} 
-          icon={<UserMinus className="w-5 h-5 text-red-600" />} 
+        <StatsCard
+          title="Blocked Students"
+          value={stats.blockedStudents}
+          icon={<UserMinus className="w-5 h-5 text-red-600" />}
           description="Access restricted"
           color="red"
         />
@@ -160,7 +160,7 @@ const stats = statsData ?? {
           filteredStudents.map((student) => (
             <Card key={student.id} className="border-none shadow-sm hover:shadow-md transition-all duration-200 group">
               <CardContent className="p-4 flex items-center justify-between">
-                
+
                 <div className="flex items-center gap-4 w-[30%]">
                   <div className="h-11 w-11 rounded-full bg-slate-100 flex items-center justify-center font-bold text-slate-500 border border-slate-200 uppercase">
                     {student.firstName[0]}{student.lastName[0]}
@@ -194,9 +194,9 @@ const stats = statsData ?? {
 
                 <div className="flex items-center gap-2 opacity-80 group-hover:opacity-100 transition-opacity">
                   <ActionButton icon={<Eye className="w-4 h-4" />} label="View" color="blue" onClick={() => openModal("detail", student.id)} />
-                  <ActionButton icon={<Edit className="w-4 h-4" />} label="Edit" color="gray" onClick={() => openModal("edit", student.id)} />
+                  {/* <ActionButton icon={<Edit className="w-4 h-4" />} label="Edit" color="gray" onClick={() => openModal("edit", student.id)} />
                   <ActionButton icon={<Ban className="w-4 h-4" />} label={student.isBlocked ? "Unblock" : "Block"} color="orange" onClick={() => openModal("block", student.id)} />
-                  <ActionButton icon={<Trash2 className="w-4 h-4" />} label="Delete" color="red" onClick={() => openModal("delete", student.id)} />
+                  <ActionButton icon={<Trash2 className="w-4 h-4" />} label="Delete" color="red" onClick={() => openModal("delete", student.id)} /> */}
                 </div>
               </CardContent>
             </Card>
@@ -242,9 +242,9 @@ function ActionButton({ icon, label, color, onClick }: any) {
     red: "hover:bg-red-50 text-red-600 border-red-100"
   };
   return (
-    <Button 
-      variant="outline" 
-      size="sm" 
+    <Button
+      variant="outline"
+      size="sm"
       className={`h-9 gap-2 font-bold text-xs border transition-all ${colors[color]}`}
       onClick={onClick}
     >

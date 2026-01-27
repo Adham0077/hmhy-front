@@ -105,7 +105,7 @@ export const TeacherPage = () => {
     };
 
     const handleOpenDetails = (id: string) => {
-        console.log('🔍 Opening details for:', id) // ← Debug log
+        console.log('🔍 Opening details for:', id) 
 
         setSelectedTeacherId(id);
         setIsModalOpen(true);
@@ -279,7 +279,7 @@ export const TeacherPage = () => {
                                             </h3>
                                             <Badge
                                                 className={`text-[10px] px-2 py-0.5 rounded-full border-none font-bold uppercase shadow-none 
-    ${teacher.isActive
+                                                    ${teacher.isActive
                                                         ? "bg-green-100 text-green-700 hover:bg-green-100"
                                                         : "bg-gray-100 text-red-500 hover:bg-gray-100"
                                                     }`}

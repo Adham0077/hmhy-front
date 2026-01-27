@@ -91,10 +91,6 @@ export const Payment = () => {
           <h1 className='text-3xl font-bold text-gray-900'>Payments</h1>
           <p className='text-gray-500 mt-1'>Manage and monitor all payment transactions</p>
         </div>
-        <Button className='flex items-center gap-2'>
-          <Download className='w-4 h-4' />
-          Export
-        </Button>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
